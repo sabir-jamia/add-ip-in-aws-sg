@@ -4,7 +4,7 @@ const {
   RevokeSecurityGroupIngressCommand,
 } = require("@aws-sdk/client-ec2");
 
-const { getPublicIP } = require("./get-public-ip");
+const { getPublicIP } = require("./get-IPV4");
 
 async function run() {
   const ip = await getPublicIP();
