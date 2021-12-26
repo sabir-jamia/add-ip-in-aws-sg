@@ -21,9 +21,9 @@ async function run() {
     GroupId: core.getInput("aws-security-group-id"),
     IpPermissions: [
       {
-        IpProtocol: "tcp",
-        FromPort: "6379",
-        ToPort: "6379",
+        IpProtocol: core.getInput("aws-ip-protocol"),
+        FromPort: core.getInput("aws-from-port"),
+        ToPort: core.getInput("aws-to-port"),
         IpRanges: [{ CidrIp: `${ip}/32` }],
       },
     ],
